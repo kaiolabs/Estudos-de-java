@@ -20,12 +20,12 @@ public class desafio {
     
 
     public static int d(int ano) {
-        return (19 * (ano % 19) + 24) % 30;
+        return (19 * (ano % 19) + 24) % 30; // calcula o dia da Páscoa
     }
 
     public static int e(int ano) {
         int d = d(ano);
-        return (2 * (ano % 4) + 4 * (ano % 7) + 6 * d + 5) % 7;
+        return (2 * (ano % 4) + 4 * (ano % 7) + 6 * d + 5) % 7; // calcula o dia da semana
     }
 
     public static int DiaPascoa(int ano) {

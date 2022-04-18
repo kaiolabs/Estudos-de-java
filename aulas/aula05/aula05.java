@@ -5,10 +5,10 @@ import java.util.*;
 public class aula05 {
     public static void main(String[] args){
 
-        Pessoa [] pessoas = new Pessoa[5];
+        Funcionario [] pessoas = new Funcionario[5];
 
         for (int i = 0; i < pessoas.length; i++) {
-            Pessoa p = new Pessoa();
+            Funcionario p = new Funcionario();
             p.setNome("Nome " + (i + 1));
             p.setIdade(i+30);
             p.setCidade("SCS");
@@ -16,7 +16,7 @@ public class aula05 {
             pessoas[i] = p;
         }
 
-        for (Pessoa p : pessoas) {
+        for (Funcionario p : pessoas) {
             System.out.println(p.getNome() + " " + p.getIdade() + " " + p.getCidade());
         }
 
@@ -26,11 +26,11 @@ public class aula05 {
 
 
 
-        Pessoa [] [] mat = new Pessoa[3][4];
+        Funcionario [] [] mat = new Funcionario[3][4];
 
         for (int i = 0; i < mat.length; i++) {
             for (int j = 0; j < mat[i].length; j++) {
-                Pessoa p = new Pessoa();
+                Funcionario p = new Funcionario();
                 p.setNome("Nome " + (i + 1) + " " + (j + 1));
                 p.setIdade(i+30);
                 p.setCidade("SCS");
@@ -46,13 +46,13 @@ public class aula05 {
         }
 
 
-        Pessoa [] [] [] [] mat3 = new Pessoa[3] [3] [3] [3];
+        Funcionario [] [] [] [] mat3 = new Funcionario[3] [3] [3] [3];
 
         for (int i = 0; i < mat3.length; i++) {
             for (int j = 0; j < mat3[i].length; j++) {
                 for (int k = 0; k < mat3[i][j].length; k++) {
                     for (int l = 0; l < mat3[i][j][k].length; l++) {
-                        Pessoa p = new Pessoa();
+                        Funcionario p = new Funcionario();
                         p.setNome("Nome " + (i + 1) + " " + (j + 1) + " " + (k + 1) + " " + (l + 1));
                         p.setIdade(i+30);
                         p.setCidade("SCS");
@@ -75,23 +75,23 @@ public class aula05 {
 
 
 
-        List<Pessoa> lista = new ArrayList<Pessoa>();
+        List<Funcionario> lista = new ArrayList<Funcionario>();
 
         for (int i = 0; i < lista.size(); i++) {
-            Pessoa p = new Pessoa();
+            Funcionario p = new Funcionario();
             p.setNome("Nome " + (i + 1));
             p.setIdade(i+30);
             p.setCidade("SCS");
 
         }
 
-        Map<String, Pessoa> map = new HashMap<String, Pessoa>();
+        Map<String, Funcionario> map = new HashMap<String, Funcionario>();
         int valor = 10;
-        map.put("chave", new Pessoa());
-        map.put("chave2", new Pessoa());
-        map.put("chave3", new Pessoa());
+        map.put("chave", new Funcionario());
+        map.put("chave2", new Funcionario());
+        map.put("chave3", new Funcionario());
 
-        for (Map.Entry<String, Pessoa> entry : map.entrySet()) {
+        for (Map.Entry<String, Funcionario> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue().getNome());
         }
 
