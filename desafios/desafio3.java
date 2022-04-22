@@ -1,23 +1,71 @@
 package desafios;
 
+
 import java.util.Scanner;
-
+ 
 public class desafio3 {
-    public static void main(String[] args){
-
+    public static void main(String[] args)
+    {
         Scanner in = new Scanner(System.in);
+
         int ano, d, dia_da_pascoa, e, mes_da_pascoa;
         System.out.print("Digite o valor do ano: ");
         ano = in.nextInt();
+        in.nextLine();
 
-        cal = (ano % 19) + 1;
-        d = (19 * cal) % 30;
-        e = (2 * (ano % 4) + 4 * (ano % 7) + 6 * d + 5) % 7;
-        dia_da_pascoa = d + e - 9;
-
-        System.out.println("\n\nDia da Páscoa: " + dia_da_pascoa + "/" + mes_da_pascoa + "/" + ano + "\n\n");
-        
-
+        gaussEaster(ano);
     }
-        
+
+    static void gaussEaster(int Y)
+    {
+        float A, B, C, P, Q, M, N, D, E;
+ 
+        // All calculations done
+        // on the basis of
+        // Gauss Easter Algorithm
+        A = Y % 19;
+        B = Y % 4;
+        C = Y % 7;
+        P = (float)Math.floor(Y / 100);
+        Q = (float)Math.floor(
+            (13 + 8 * P) / 25);
+        M = (15 - Q + P - P / 4) % 30;
+        N = (4 + P - P / 4) % 7;
+        D = (19 * A + M) % 30;
+        E = (2 * B + 4 * C + 6 * D + N) % 7;
+        int days = (int)(22 + D + E);
+ 
+        // A corner case,
+        // when D is 29
+        if ((D == 29) && (E == 6)) {
+            System.out.println(Y + "-04"
+                               + "-19");
+            return;
+        }
+        // Another corner case,
+        // when D is 28
+        else if ((D == 28) && (E == 6)) {
+            System.out.println(Y + "-04"
+                               + "-18");
+            return;
+        }
+        else {
+ 
+            // If days > 31, move to April
+            // April = 4th Month
+            if (days > 31) {
+                System.out.println(Y + "-04-"
+                                   + (days - 31));
+                return;
+            }
+            // Otherwise, stay on March
+            // March = 3rd Month
+            else {
+                System.out.println(Y + "-03-"
+                                   + days);
+                return;
+            }
+        }
+    }
+ 
 }

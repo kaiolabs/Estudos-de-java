@@ -7,32 +7,12 @@ public class desafio2 {
 
         Scanner in = new Scanner(System.in);
 
-        int ano, d, dia_da_pascoa, e, mes_da_pascoa;
+        int ano;
         System.out.print("Digite o valor do ano: ");
         ano = in.nextInt();
         in.nextLine();
-        d=(19*(ano%19)+24)%30;
-        e=(2*(ano%4)+4*(ano%7)+6*d+5)%7;
-        if(d+e<10)
-            dia_da_pascoa=d+e+22;
-        else
-            dia_da_pascoa=d+e-9;
-        if(d+e<10)
-        {
-            mes_da_pascoa=3;
-            System.out.println("Mar\u00E7o");
-        }
-        else
-        {
-            mes_da_pascoa=4;
-            System.out.println("Abril");
-        }
-        if(dia_da_pascoa==26&&mes_da_pascoa==4)
-            dia_da_pascoa=19;
-        if(dia_da_pascoa==25&&mes_da_pascoa==4&&d==28&&e==6&&(ano%19)>10)
-            dia_da_pascoa=18;
-        System.out.println("O valor do dia da pascoa: " + dia_da_pascoa);
-        System.out.println("O valor do mes da pascoa: " + mes_da_pascoa);
+
+        System.out.println("\nDia da pascoa: " + PASCOA(ano) + "/" + P(ano) + "/" + ano + "\n");
 
     }
 
@@ -65,7 +45,7 @@ public class desafio2 {
         }
 
         public static int H(int ano){
-            return ((19 * A(ano) + B(ano) - D(ano) - G(ano) + 15) / 30);
+            return ((19 * A(ano) + B(ano) - D(ano) - G(ano) + 15) % 30);
         }
 
         public static int I(int ano){

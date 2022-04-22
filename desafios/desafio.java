@@ -1,5 +1,6 @@
 package desafios;
 
+
 import java.util.Scanner;
 
 public class desafio {
@@ -14,10 +15,9 @@ public class desafio {
         int mes_da_pascoa = MesPascoa(ano);
 
         System.out.println("\n\nDia da Páscoa: " + dia_da_pascoa + "/" + mes_da_pascoa + "/" + ano + "\n\n");
+        System.out.println(e(ano));
 
     }
-
-    
 
     public static int d(int ano) {
         return (19 * (ano % 19) + 24) % 30; // calcula o dia da Páscoa
